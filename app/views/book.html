@@ -1,0 +1,34 @@
+<p>This is the book view.</p>
+<div ng-controller="BookCtrl">
+  <div ng-repeat="things in awesomeThings">
+    <p>{{things}}</p>
+  </div>
+  <br/>
+  <div class="panel panel-default">
+
+    <div class="panel-heading">Livros</div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Versão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="book in books">
+          <td>{{book.id}}</td>
+          <td>{{book.name}}</td>
+          <td>{{book.version | number : 2}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+    <!--<p>Id: {{book.id}} / Nome: {{book.name}} / Versão: {{book.version | number : 2}}</p>-->
+    <!--Autores:-->
+    <!--<div ng-repeat="author in book.authors">-->
+      <!--<p>Id: {{author.id}} / Nome: {{author.name}}</p>-->
+    <!--</div>-->
+  </div>
+</div>
