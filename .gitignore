@@ -3,3 +3,7 @@
 /.tmp
 /.sass-cache
 /bower_components
+.idea/workspace.xml
+README.md
+/.idea
+.idea/dictionaries/thiago_dpf.xml

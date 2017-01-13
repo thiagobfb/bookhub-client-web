@@ -17,7 +17,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'btorfs.multiselect'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -35,6 +36,17 @@ angular
         templateUrl: 'views/book.html',
         controller: 'BookCtrl',
         controllerAs: 'book'
+      })
+      .when('/book/:id/edit', {
+        templateUrl: 'views/edit-book.html',
+        controller: 'BookCtrl',
+        controllerAs: 'book'
+        // ,
+        // resolve: {
+        //   bookData: function (Book, $route) {
+        //     return Book.get({id: $route.current.params.id});
+        //   }
+        // }
       })
       .otherwise({
         redirectTo: '/'

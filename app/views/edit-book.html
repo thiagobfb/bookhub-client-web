@@ -1,0 +1,11 @@
+<p>This is the edit-book view.</p>
+<div ng-controller="BookCtrl" data-ng-init="getBook()">
+  <!--<p>{{books.length}}</p>-->
+  <p>ID: {{book.id}}</p>
+  <p>Nome: {{book.name}}</p>
+  <form class="form-horizontal" role="form" ng-submit="updateBook()">
+    <div ng-include="'partials/form-book.html'"></div>
+  </form>
+
+</div>
+
