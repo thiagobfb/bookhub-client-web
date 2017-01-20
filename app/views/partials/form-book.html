@@ -1,6 +1,41 @@
 <div class="form-group">
-  <label for="name" class="col-sm-2 control-label">Título</label>
+  <label for="name" class="col-sm-2 control-label">Título: </label>
   <div class="col-sm-10">
     <input type="text" ng-model="book.name" class="form-control" id="name" placeholder="Título do Livro Aqui"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="categories" class="col-sm-2 control-label">Categorias: </label>
+  <div class="col-sm-10">
+    <multiselect id="categories" ng-model="book.categories" options="selectCategories" show-search="true" id-prop="id" display-prop="name" search-limit="10">Selecionar</multiselect>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="authors" class="col-sm-2 control-label">Autor(es): </label>
+  <div class="col-sm-10">
+    <!--<multiselect id="authors" ng-model="book.authors" options="selectCategories" show-search="true" id-prop="id" display-prop="name" search-limit="10">Selecionar</multiselect>-->
+    <table class="table" id="authors">
+      <thead>
+      <tr>
+        <th>Nome</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="author in book.authors">
+          <td>{{author.name}}</td>
+          <td>
+            <a href="" aria-label="Remover Autor" ng-click="removeAuthor(author)">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-default" aria-label="Adicionar Autor">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Autor
+    </button>
   </div>
 </div>
