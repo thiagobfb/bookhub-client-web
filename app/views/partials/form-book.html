@@ -34,8 +34,91 @@
         </tr>
       </tbody>
     </table>
-    <button type="button" class="btn btn-default" aria-label="Adicionar Autor">
+    <button type="button" class="btn btn-default" aria-label="Adicionar Autor" data-toggle="modal" data-target="#modal-author" ng-click="getAllAuthors()">
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Autor
     </button>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="colaborators" class="col-sm-2 control-label">Colaborador(es): </label>
+  <div class="col-sm-10">
+    <!--<multiselect id="authors" ng-model="book.authors" options="selectCategories" show-search="true" id-prop="id" display-prop="name" search-limit="10">Selecionar</multiselect>-->
+    <table class="table" id="colaborators">
+      <thead>
+      <tr>
+        <th>Nome</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="colaborator in book.colaborators">
+        <td>{{colaborator.name}}</td>
+        <td>
+          <a href="" aria-label="Remover Colaborador" ng-click="removeColaborator(colaborator)">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-default" aria-label="Adicionar Colaborador" data-toggle="modal" data-target="#modal-colaborator" ng-click="getAllColaborators()">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Colaborador
+    </button>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="name" class="col-sm-2 control-label">Conteúdo: </label>
+  <div class="col-sm-10">
+    <textarea ng-model="book.content" class="form-control" id="content" rows="5" placeholder="Conteúdo Aqui"></textarea>
+  </div>
+</div>
+
+<button type="submit" class="btn btn-primary pull-right" id="btn-save">Salvar</button>
+
+<!-- Modal Autor -->
+<div id="modal-author" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Pesquisar Autores</h4>
+      </div>
+      <div class="modal-body">
+        <label for="add-authors" class="col-sm-2 control-label">Nome do Autor: </label>
+        <multiselect id="add-authors" ng-model="book.authors" options="selectAuthors" show-search="true" id-prop="id" display-prop="name" search-limit="10">Selecionar</multiselect>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addAuthors()">Adicionar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Colaborador -->
+<div id="modal-colaborator" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Pesquisar Colaboradores</h4>
+      </div>
+      <div class="modal-body">
+        <label for="add-colaborators" class="col-sm-2 control-label">Nome do Colaborador: </label>
+        <multiselect id="add-colaborators" ng-model="book.colaborators" options="selectColaborators" show-search="true" id-prop="id" display-prop="name" search-limit="10">Selecionar</multiselect>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addColaborators()">Adicionar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>

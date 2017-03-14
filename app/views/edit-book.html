@@ -3,7 +3,7 @@
   <!--<p>{{books.length}}</p>-->
   <p>ID: {{book.id}}</p>
   <p>Nome: {{book.name}}</p>
-  <form class="form-horizontal" role="form" ng-submit="updateBook()">
+  <form class="form-horizontal" role="form" ng-submit="updateBook(book)">
     <div ng-include="'views/partials/form-book.html'"></div>
   </form>
 
