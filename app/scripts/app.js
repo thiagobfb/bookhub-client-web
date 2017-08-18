@@ -48,6 +48,11 @@ angular
         //   }
         // }
       })
+      .when('/testform', {
+        templateUrl: 'views/testform.html',
+        controller: 'TestformCtrl',
+        controllerAs: 'testform'
+      })
       .otherwise({
         redirectTo: '/'
       });
