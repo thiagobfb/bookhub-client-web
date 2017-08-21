@@ -1,0 +1,8 @@
+<p>This is the add-book view.</p>
+<div ng-controller="BookCtrl"  data-ng-init="loadInitialDataFormAdd()">
+  <!--<p>{{books.length}}</p>-->
+  <form class="form-horizontal" role="form" ng-submit="addBook(book)">
+    <div ng-include="'views/partials/form-book.html'"></div>
+  </form>
+
+</div>

@@ -50,8 +50,13 @@ angular.module('bookhubClientApp')
       // $scope.book = Book.get({id:book.id});
       // $scope.book.name = book.name;
       // $scope.book.content = book.content;
+      // alert(JSON.stringify(book));
       Book.update({id: book.id}, book);
-      alert("Cheguei aqui");
+    };
+
+    $scope.addBook = function (book) {
+      alert(JSON.stringify(book));
+      Book.save(book);
     };
 
     $scope.getBooks();
@@ -89,4 +94,14 @@ angular.module('bookhubClientApp')
         console.log(colaborator);
       });
     };
+
+    $scope.loadInitialDataFormAdd = function () {
+      $scope.book = {};
+      $scope.selectCategories = Category.query();
+      $scope.arrayAuthors = $scope.book.authors;
+      $scope.arrayColaborators = $scope.book.colaborators;
+      // alert("Entrei no formulário teste");
+      return $scope.book;
+    };
+
   });

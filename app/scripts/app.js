@@ -53,6 +53,11 @@ angular
         controller: 'TestformCtrl',
         controllerAs: 'testform'
       })
+      .when('/book/add-book', {
+        templateUrl: 'views/add-book.html',
+        controller: 'BookCtrl',
+        controllerAs: 'book'
+      })
       .otherwise({
         redirectTo: '/'
       });
